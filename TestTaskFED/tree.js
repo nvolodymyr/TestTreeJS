@@ -39,7 +39,7 @@ class Tree {
     }
 
     render() {
-        this.data.sort((a, b) => (a.id > b.id ? 1 : -1));
+        this.data.sort((a, b) =>(Number(a.id) > Number(b.id) ? 1 : -1));
        
         this.data.forEach(item => {
             if (item.parent === null && item !== "") {
@@ -82,7 +82,7 @@ class Tree {
 
     addItem(parentId) {
         this.data.push({
-            id: this.data.length + 1,
+            id:`${this.data.length + 1}`,
             parent: parentId
         });
         this.firstUl.innerHTML = "";
